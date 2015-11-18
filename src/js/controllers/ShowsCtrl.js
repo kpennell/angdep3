@@ -9,29 +9,20 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
     $scope.shows = showsSync.$asArray();
     $scope.listShows = [];
     $scope.filteredShows = [];
-    $scope.daysAhead = .5;
+    $scope.daysAhead = .01;
 
-
-    $scope.cityoptions = [
-    'Denver*',
-    '(More Cities Soon)'
-  ];
-
-    //$scope.dayofWeekSelected = null;
 
     $scope.day = Date.now();
+    
 
     $scope.selectDay = function(day) {
         var todaysDateinMS = Date.now();
         $scope.day = day;
 
         $scope.daysAhead = (($scope.day - todaysDateinMS) / 86400000);
-        //console.log('approx days ahead of now ' + $scope.daysAhead);
-        // $scope.daysAhead needs to be a number 1-7 so that it can feed into filter
+    
     }
 
-
-    //Date.now() + (2 * 86400000)
 
     $scope.days = [
     ($scope.day + (0 * 86400000)),
@@ -149,10 +140,6 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
       }
     });
 
-
-
-
-
     // will change styling if active track is playing
 
     $scope.$watch('player.currentTrack.properties.id', function () {
@@ -170,14 +157,6 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
       var positionPercent = (e.pageX - e.currentTarget.offsetLeft) / e.currentTarget.offsetWidth;
       Player.setPosition(positionPercent);
     };
-
-
-
-
-// end of experimental player
-
-
-
 
 
     // map
