@@ -110,7 +110,13 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
         $scope.listShows = $scope.shows[0];
 
         $scope.$watch('daysAhead', function () {
+
+
             $scope.filteredShows = $filter('upComing')($scope.listShows, 'properties.date', $scope.daysAhead);
+
+            angular.forEach($scope.filteredShows,function(value,index){
+                SC.stream(value.properties.stream_url);
+            })
 
             angular.extend($scope, { // Map data
                 geojson: {
@@ -131,9 +137,9 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
 
  // Experimental Player with service
 
+    
     $scope.player = Player;
-    //console.log($scope.player);
-
+    
     $scope.$on('statusChanged', function () {
       if(!$scope.$$phase) {
         $scope.$digest();

@@ -8,6 +8,7 @@ angular.module('app')
     var playingSound;
     $rootScope.trackPlayingIndex;  // trying to figure out index
 
+    
 
     return {
 
@@ -47,7 +48,6 @@ angular.module('app')
             }
           });
 
-          //console.log(player);
 
           playingSound = sound;
           player.currentTrack = track;
