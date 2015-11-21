@@ -4,14 +4,23 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
 var ngAnnotate = require('gulp-ng-annotate');
+var uncss = require('gulp-uncss');
 
 gulp.task('css', function() {
   gulp.src('src/css/*.css')
     .pipe(plumber())
+    .pipe(uncss({
+            html: ['src/tpl/*.html', 'src/tpl/**/*.html', 'src/*.html']
+        }))
     .pipe(csso())
     .pipe(concat('app.min.css'))
     .pipe(gulp.dest('src/css/dist'));
 });
+
+/* 
+uncss can't see .angular-leaflet-map so that needs to be put in manually
+
+*/
 
 gulp.task('appJS', function() {
   gulp.src(['src/js/*.js', 'src/js/**/*.js'])
