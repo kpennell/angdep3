@@ -36,10 +36,10 @@
                 <ul class="list-group no-bg no-borders pull-in songgroup scrollable hover">
                     <li class="list-group-item" ng-repeat="show in filteredShows | orderBy : date" ng-mouseover="menuMouse(show)" ng-mouseout="menuMouseout(show)" ng-class="{hoverListStyle: $index == hoveritem}">
                         <span class="pull-right h3 text-muted m-l-xs">
-                <i class="fa" ng-click="checkIfLoggedIn(show)" ng-class="{'fa-heart falist': loggedInUserFavorites[show.properties.id], 'fa-heart-o falist': !loggedInUserFavorites[show.properties.id]}"></i>
+                <i class="fa" ng-click="checkIfLoggedIn(show)" ng-class="{'fa-heart listIcons': loggedInUserFavorites[show.properties.id], 'fa-heart-o listIcons': !loggedInUserFavorites[show.properties.id]}"></i>
 
-                <i class="fa fa-play falist" ng-click="player.play(show, $index)" ng-show="$index != trackPlayingIndex"></i>
-                <i class="fa fa-pause falist" ng-click="player.pause(show, $index)" ng-show="$index == trackPlayingIndex"></i></span>
+                <i class="fa fa-play falist listIcons" ng-click="player.play(show, $index)" ng-show="$index != trackPlayingIndex"></i>
+                <i class="fa fa-pause falist listIcons" ng-click="player.pause(show, $index)" ng-show="$index == trackPlayingIndex"></i></span>
                         <span class="pull-left thumb-sm avatar m-r m-t-sm">
                 <img ng-src="{{show.properties.artwork_url}}" alt="..." class="r">
               </span>

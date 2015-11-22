@@ -105,8 +105,6 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
 
     $scope.shows.$loaded(function () {
 
-        // Left Sidebar data
-
         $scope.listShows = $scope.shows[0];
 
         $scope.$watch('daysAhead', function () {

@@ -48,7 +48,7 @@ gulp.task('randomJS', function() {
             // });
 
 gulp.task('watch', function() {
-    gulp.watch('src/js/**/*.js', ['appJS', 'randomJS']);
+    gulp.watch('src/js/**/*.js', ['appJS', 'randomJS', 'css']);
 });
 
 /*

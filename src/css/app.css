@@ -1112,9 +1112,6 @@ body {
     font-size: 14px;
 }
 
-  .falist {
-    font-size: 28px;
-  }
   .app-aside {
     float: none;
   }
@@ -1154,6 +1151,10 @@ body {
   .navbar-form .form-group {
     margin-bottom: 0;
   }
+
+   .listIcons {
+        font-size: 33px;
+    }
 }
 html {
   background-color: #384A68;
