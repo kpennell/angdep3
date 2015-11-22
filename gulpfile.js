@@ -23,7 +23,7 @@ uncss can't see .angular-leaflet-map so that needs to be put in manually
 
 */
 
-gulp.task('appJS', ['cleanJs'], function() {
+gulp.task('appJS', function() {
     gulp.src(['src/js/*.js', 'src/js/**/*.js'])
         .pipe(concat('app.min.js'))
         .pipe(ngAnnotate())
@@ -31,7 +31,7 @@ gulp.task('appJS', ['cleanJs'], function() {
         .pipe(gulp.dest('src/js/dist'));
 });
 
-gulp.task('randomJS',['cleanJs'], function() {
+gulp.task('randomJS', function() {
     gulp.src(['src/js/filters/*.js',
             'src/js/directives/*.js',
             'src/js/services/*.js'
@@ -42,10 +42,10 @@ gulp.task('randomJS',['cleanJs'], function() {
         .pipe(gulp.dest('src/js/dist'));
 });
 
-gulp.task('cleanJs', function(){
-  return gulp.src('src/js/dist/*.js', {read: false})
-      .pipe(clean());
-});
+            // gulp.task('cleanJs', function(){
+            //   return gulp.src('src/js/dist/*.js', {read: false})
+            //       .pipe(clean());
+            // });
 
 gulp.task('watch', function() {
     gulp.watch('src/js/**/*.js', ['appJS', 'randomJS']);

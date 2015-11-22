@@ -114,7 +114,8 @@ function($scope, $rootScope, $state, $firebase, $filter, simpleLogin, leafletDat
 
             $scope.filteredShows = $filter('upComing')($scope.listShows, 'properties.date', $scope.daysAhead);
 
-            angular.forEach($scope.filteredShows,function(value,index){
+            // work around for mobile streaming problem
+            angular.forEach($scope.filteredShows,function(value,index){ 
                 SC.stream(value.properties.stream_url);
             })
 

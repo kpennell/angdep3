@@ -7,7 +7,8 @@ angular.module('app', [
     'oc.lazyLoad',
     'firebase',
     'simpleLogin',
-    'leaflet-directive'
+    'leaflet-directive',
+    'ngTouch'
 ])
 
   .run(['simpleLogin', function(simpleLogin) {
