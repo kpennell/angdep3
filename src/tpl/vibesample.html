@@ -44,7 +44,7 @@
                 <img ng-src="{{show.properties.artwork_url}}" alt="..." class="r">
               </span>
                         <div class="clear">
-                            <div><a ng-href={{show.properties.artist_url}} target="_blank">{{show.properties.artist}}</a></div>
+                            <div class="artist"><a ng-href={{show.properties.artist_url}} target="_blank">{{show.properties.artist}}</a></div>
                             <small class="text-muted"><a ng-href={{show.properties.venue_url}} target="_blank"> {{show.properties.venue_name}}</a></small>&nbsp;&middot;&nbsp;
                             <small>{{show.properties.date | num | date: 'medium'}}</small>
                             <!-- h:mm a -->
@@ -52,7 +52,7 @@
                             <small class="text-muted">
                   <span class="tags">{{show.properties.tags}}</span>
                 </small> &nbsp;&middot;&nbsp;
-                            <small><a ng-href={{show.properties.ticket_url}} target="_blank"> {{show.properties.price | noFractionCurrency}}</a></small>
+                            <small><a ng-href={{show.properties.ticket_url}} target="_blank">Tickets</a></small>
                         </div>
                     </li>
                 </ul>
