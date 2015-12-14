@@ -30,13 +30,19 @@ angular.module('app')
 
         var player = this;
 
-        SC.stream(track.properties.stream_url, function(sound){
+        SC.stream(track.properties.stream_url, function(sound){         
 
           if (playingSound) {
            playingSound.stop();
          }
 
           sound.play({
+            onload: function () {
+              if (this.readyState === 2){
+                swal("Can't play that track right now", "Sorry...");
+              } 
+            },
+
             whileplaying: function () {
               player.duration = Math.floor(this.durationEstimate / 1000);
               player.position = Math.floor(this.position / 1000);
