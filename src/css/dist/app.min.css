@@ -38,7 +38,7 @@ a:hover {
 }
 
 .text-md {
-    font-size: 22px
+    font-size: 23px
 }
 
 .subheader {
@@ -558,7 +558,7 @@ body {
     float: none;
     height: auto;
     padding: 0 5px;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 50px;
     text-align: center
@@ -603,7 +603,7 @@ body {
 
 @media (max-width:767px) {
     .text-md {
-        font-size: 15px;
+        font-size: 18px;
         text-align: center
     }
     .numOfShows {
@@ -1043,7 +1043,7 @@ a.text-#000000:hover {
 }
 
 .wrapper-md {
-    padding: 10px 20px 20px
+    padding: 10px 20px 20px;
 }
 
 .padder {
@@ -1056,8 +1056,8 @@ a.text-#000000:hover {
 }
 
 .pull-in {
-    margin-right: -15px;
-    margin-left: -15px
+    margin-right: -20px;
+    margin-left: -20px
 }
 
 .b-r {
@@ -1268,7 +1268,7 @@ a.text-#000000:hover {
         float: right!important
     }
     .wrapper-md {
-        padding: 15px
+        padding: 10px 15px 15px 15px;
     }
 }
 
